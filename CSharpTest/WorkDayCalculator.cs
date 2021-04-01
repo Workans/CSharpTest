@@ -20,7 +20,7 @@ namespace CSharpTest
                 int weekDays = 0;
                 foreach (var weekDay in weekEnds)
                 {
-                    if (startDate.AddDays(dayCount + weekDays - 1) >= weekDay.StartDate)
+                    if (startDate <= weekDay.StartDate && startDate.AddDays(weekDays - 1 + dayCount) >= weekDay.StartDate)
                         weekDays += weekDay.EndDate.Day - weekDay.StartDate.Day + 1;
                 }
                 int days = dayCount + weekDays;

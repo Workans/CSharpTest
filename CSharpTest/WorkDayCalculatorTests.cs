@@ -40,17 +40,38 @@ namespace CSharpTest
         [TestMethod]
         public void TestWeekendAfterEnd()
         {
-            DateTime startDate = new DateTime(2021, 4, 21);
+            //DateTime startDate = new DateTime(2021, 4, 21);
+            //DateTime startDate = new DateTime(2021, 4, 21);
+            DateTime startDate = new DateTime(2021, 4, 28);
+
             int count = 5;
-            WeekEnd[] weekends = new WeekEnd[2]
+
+            //WeekEnd[] weekends = new WeekEnd[2]
+            //{
+            //    new WeekEnd(new DateTime(2021, 4, 23), new DateTime(2021, 4, 25)),
+            //    new WeekEnd(new DateTime(2021, 4, 29), new DateTime(2021, 4, 29))
+            //};
+
+            //WeekEnd[] weekends = new WeekEnd[2]
+            //{
+            //    new WeekEnd(new DateTime(2021, 4, 23), new DateTime(2021, 4, 25)),
+            //    new WeekEnd(new DateTime(2021, 4, 28), new DateTime(2021, 4, 28))
+            //};
+
+            WeekEnd[] weekends = new WeekEnd[3]
             {
-                new WeekEnd(new DateTime(2021, 4, 23), new DateTime(2021, 4, 25)),
+                new WeekEnd(new DateTime(2021, 4, 20), new DateTime(2021, 4, 21)),
+                new WeekEnd(new DateTime(2021, 4, 28), new DateTime(2021, 4, 28)),
                 new WeekEnd(new DateTime(2021, 4, 29), new DateTime(2021, 4, 29))
             };
 
             DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
 
-            Assert.IsTrue(result.Equals(new DateTime(2021, 4, 28)));
+            //Assert.IsTrue(result.Equals(new DateTime(2021, 4, 28)));
+
+            //Assert.IsTrue(result.Equals(new DateTime(2021, 4, 29)));
+
+            Assert.IsTrue(result.Equals(new DateTime(2021, 5, 4)));
         }
     }
 }
